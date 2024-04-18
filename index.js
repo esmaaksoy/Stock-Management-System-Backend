@@ -1,12 +1,10 @@
 "use strict"
 
 const express = require('express')
-
-const path=require("path")
 const app = express()
 
 // envVariables to process.env:
-require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config();
 const HOST = process.env?.HOST || '127.0.0.1'
 const PORT = process.env?.PORT || 8000
 
@@ -14,34 +12,32 @@ const PORT = process.env?.PORT || 8000
 // asyncErrors to errorHandler:
 require('express-async-errors')
 
-app.use(express.static(path.join(__dirname, "public")));
-
 // Connect to DB:
 const { dbConnection } = require('./src/configs/dbConnection')
 dbConnection()
 
 
 const cors = require("cors");
-app.use(cors());
+app.use(cors({origin:"https://stock-management-system-esma.netlify.app"}));
 
 // Accept JSON:
 app.use(express.json())
 
 // Call static uploadFile:
-// app.use('/upload', express.static('./upload'))
+app.use('/upload', express.static('./upload'))
 
 // Check Authentication:
 app.use(require('./src/middlewares/authentication'))
 
 // Run Logger:
-// app.use(require('./src/middlewares/logger'))
+app.use(require('./src/middlewares/logger'))
 
 // res.getModelList():
 app.use(require('./src/middlewares/queryHandler'))
 
 
 // HomePath:
-app.all('/api/v1', (req, res) => {
+app.all('/', (req, res) => {
     res.send({
         error: false,
         message: 'Welcome to Stock Management API',
@@ -55,17 +51,7 @@ app.all('/api/v1', (req, res) => {
 })
 
 // Routes:
-app.use("/api/v1",require('./src/routes'))
-
-
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./public", "index.html"));
-  });
-
-  app.use("*", (req, res) => {
-    res.status(404).json({ msg: "not found" });
-
-  })
+app.use(require('./src/routes'))
 
 
 // errorHandler:
