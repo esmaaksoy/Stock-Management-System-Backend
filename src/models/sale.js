@@ -46,7 +46,7 @@ const SaleSchema = new mongoose.Schema(
     },
   },
   {
-    collection: "Sales",
+    collection: "sales",
     timestamps: true,
   }
 );
