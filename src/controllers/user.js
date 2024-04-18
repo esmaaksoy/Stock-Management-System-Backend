@@ -100,7 +100,7 @@ module.exports = {
       ? { _id: req.params.id }
       : { _id: req.user._id };
 
-    //! Yeni kayıtlarda admin/staff durumu değiştirilemez:
+    //! Dataları güncellerken admin ve staff bilgisi true veya false gelmiş olabilir. Ama her ne gelirse gelsin gelen datayı delete yaparak siliyorruz, böylece admin dışında Yeni kayıtlarda admin/staff durumu değiştirilemez:
     if (!req.user?.isAdmin) {
       delete req.body.isStaff;
       delete req.body.isAdmin;
