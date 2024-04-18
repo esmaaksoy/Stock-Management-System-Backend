@@ -187,13 +187,13 @@ module.exports = async function () {
         "image": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Eti_logo.png",
         "address": "Uğur Mumcu, 2271. Sk. No:15, 34270 Sultangazi/İstanbul, Türkiye"
     })
-    await Firm.create({
-        "_id": "65343222b67e9681f937f335",
-        "name": "Çetinkaya",
-        "phone": "0212 444 00 55",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1Mug9ruTOC1x8LGeNAr-ouWrWm29Z6u91QMU8ZfE&s",
-        "address": "B01-Z02 Maslak Büyükdere Cad. Uso Center 245/A, 34396 Sarıyer/İstanbul, Türkiye"
-    })
+    // await Firm.create({
+    //     "_id": "65343222b67e9681f937f335",
+    //     "name": "Çetinkaya",
+    //     "phone": "0212 444 00 55",
+    //     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU1Mug9ruTOC1x8LGeNAr-ouWrWm29Z6u91QMU8ZfE&s",
+    //     "address": "B01-Z02 Maslak Büyükdere Cad. Uso Center 245/A, 34396 Sarıyer/İstanbul, Türkiye"
+    // })
 
     /* Product */
     const Product = require('../models/product')

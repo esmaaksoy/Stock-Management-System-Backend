@@ -57,4 +57,18 @@ const PurchaseSchema = new mongoose.Schema(
   }
 );
 
+PurchaseSchema.pre("init", function (document) {
+  document.createdAtStr = document.createdAt.toLocaleString("tr-tr", {
+    dateStyle: "full",
+    timeStyle: "medium",
+  });
+  document.updatedAtStr = document.updatedAt.toLocaleString("tr-tr", {
+    dateStyle: "full",
+    timeStyle: "medium",
+  });
+  document.__v = undefined;
+  document.createdAt = undefined;
+  document.updatedAt = undefined;
+});
+
 module.exports = mongoose.model("Purchase", PurchaseSchema);

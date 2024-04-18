@@ -16,7 +16,8 @@ const { dbConnection } = require('./src/configs/dbConnection')
 dbConnection()
 
 
-// Middlewares:
+const cors = require("cors");
+app.use(cors({ origin: "http://localhost:3000" }));
 
 // Accept JSON:
 app.use(express.json())

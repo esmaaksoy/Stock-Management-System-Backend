@@ -16,7 +16,7 @@ const FirmSchema = new mongoose.Schema(
 
     address: String,
 
-    images: [
+    image: 
       {
         type: String,
         trim: true,
@@ -27,7 +27,6 @@ const FirmSchema = new mongoose.Schema(
             message: props => `${props.value} is not a valid image url!`
           },
       },
-    ],
   },
   {
     collection: "firms",
