@@ -1,13 +1,15 @@
 "use strict"
 
 const express = require('express')
+
+const path=require("path")
 const app = express()
 
 // envVariables to process.env:
-require('dotenv').config()
+require("dotenv").config({ path: __dirname + "/.env" });
 const HOST = process.env?.HOST || '127.0.0.1'
 const PORT = process.env?.PORT || 8000
-const path=require("path")
+
 
 // asyncErrors to errorHandler:
 require('express-async-errors')
@@ -26,7 +28,7 @@ app.use(cors());
 app.use(express.json())
 
 // Call static uploadFile:
-app.use('/upload', express.static('./upload'))
+// app.use('/upload', express.static('./upload'))
 
 // Check Authentication:
 app.use(require('./src/middlewares/authentication'))
