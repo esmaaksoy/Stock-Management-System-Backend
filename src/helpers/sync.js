@@ -87,11 +87,11 @@ module.exports = async function () {
         "name": "Samsung",
         "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png"
     })
-    await Brand.create({
-        "_id": "65343222b67e9681f937f123",
-        "name": "Ülker",
-        "image": "https://cdn.worldvectorlogo.com/logos/ulker.svg"
-    })
+    // await Brand.create({
+    //     "_id": "65343222b67e9681f937f123",
+    //     "name": "Ülker",
+    //     "image": "https://cdn.worldvectorlogo.com/logos/ulker.svg"
+    // })
     await Brand.create({
         "_id": "65343222b67e9681f937f129",
         "name": "Tommy",
