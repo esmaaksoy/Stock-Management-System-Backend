@@ -3,6 +3,9 @@
 The Stock Management System is a web application developed to facilitate inventory tracking and management. The backend portion of this application provides a RESTful API server that enables users to manage their stock operations. The API supports functionality related to brands and purchases, among other inventory management features. Users can add, update, delete, and search for stock items. Additionally, they can filter stock items based on different categories and suppliers. The user authentication and authorization system assigns different user roles, each with specific levels of permissions. This ensures secure and effective collaboration among users.
 
 [Stock Management System Live Page](https://stock-management-system-backend.onrender.com)
+<br><br>
+If you prefer to see Redoc or JSON instead of Swagger, simply replace 'swagger' in the endpoint with 'redoc' or 'json'.<br>
+[Swagger Documents](https://stock-management-system-backend.onrender.com/documents/swagger/)
 
 ## Project Skeleton
 
