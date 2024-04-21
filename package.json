@@ -9,7 +9,7 @@
     "debug": "DEBUG=* nodemon"
   },
   "keywords": [],
-  "author": "Clarusway",
+  "author": "Esma",
   "license": "ISC Licence",
   "dependencies": {
     "cors": "^2.8.5",
