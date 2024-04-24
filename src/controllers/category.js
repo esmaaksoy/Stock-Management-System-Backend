@@ -3,7 +3,9 @@
 const Category = require("../models/category");
 
 module.exports = {
-  /*
+
+  list: async (req, res) => {
+      /*
             #swagger.tags = ["Categories"]
             #swagger.summary = "List Categories"
             #swagger.description = `
@@ -16,8 +18,7 @@ module.exports = {
                 </ul>
             `
         */
-
-  list: async (req, res) => {
+       
     const data = await res.getModelList(Category);
 
     res.status(200).send({
